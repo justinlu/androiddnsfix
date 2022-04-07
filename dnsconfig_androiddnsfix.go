@@ -20,17 +20,19 @@ var resolvConf resolverConfig
 
 // copy from /src/net/dnsconfig_unix.go
 type dnsConfig struct {
-	servers    []string      // server addresses (in host:port form) to use
-	search     []string      // rooted suffixes to append to local name
-	ndots      int           // number of dots in name to trigger absolute lookup
-	timeout    time.Duration // wait before giving up on a query, including retries
-	attempts   int           // lost packets before giving up on server
-	rotate     bool          // round robin among servers
-	unknownOpt bool          // anything unknown was encountered
-	lookup     []string      // OpenBSD top-level database "lookup" order
-	err        error         // any error that occurs during open of resolv.conf
-	mtime      time.Time     // time of resolv.conf modification
-	soffset    uint32        // used by serverOffset
+	servers       []string      // server addresses (in host:port form) to use
+	search        []string      // rooted suffixes to append to local name
+	ndots         int           // number of dots in name to trigger absolute lookup
+	timeout       time.Duration // wait before giving up on a query, including retries
+	attempts      int           // lost packets before giving up on server
+	rotate        bool          // round robin among servers
+	unknownOpt    bool          // anything unknown was encountered
+	lookup        []string      // OpenBSD top-level database "lookup" order
+	err           error         // any error that occurs during open of resolv.conf
+	mtime         time.Time     // time of resolv.conf modification
+	soffset       uint32        // used by serverOffset
+	singleRequest bool          // use sequential A and AAAA queries instead of parallel queries
+	useTCP        bool          // force usage of TCP for DNS resolutions
 }
 
 // copy from /src/net/dnsclient_unix.go
