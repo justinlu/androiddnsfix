@@ -70,5 +70,5 @@ func SetDNSPair(primary, secondary string, loadFromSystem bool) {
 }
 
 func init() {
-	SetDNSPair("1.1.1.1:53", "8.8.8.8:53", false)
+	SetDNSPair("223.5.5.5:53", "114.114.114.114:53", false)
 }
