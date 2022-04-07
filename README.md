@@ -7,7 +7,7 @@ Credit to https://gist.github.com/cs8425/107e01a0652f1f1f6e033b5b68364b5e
 Import it with
 
 ```golang
-import _ "github.com/mtibben/androiddnsfix"
+import _ "github.com/justinlu/androiddnsfix"
 ```
 
 Any binary built with `go build tags='androiddnsfix'` will have the fix applied
