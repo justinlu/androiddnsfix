@@ -1,3 +1,3 @@
-module github.com/mtibben/androiddnsfix
+module github.com/justinlu/androiddnsfix
 
 go 1.15
